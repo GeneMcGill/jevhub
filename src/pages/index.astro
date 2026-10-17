@@ -1,0 +1,61 @@
+---
+import "../styles.css";
+const projects = (await import("../data/projects.json")).default;
+const cats = [...new Set(projects.map(p => p.category))].sort();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Browse the Jev ecosystem — curated System-1 agent projects | JevHub</title>
+  <meta name="description" content="A curated directory of the TypeSafe Jev (System-1) agent ecosystem: 864+ projects sourced from GitHub, HN and YC. Filter by category, spot fast risers." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org", "@type": "Dataset",
+    "name": "JevHub catalog",
+    "description": `Curated catalog of ${projects.length} System-1 / TypeSafe Jev agent projects`,
+    "license": "https://opensource.org/licenses/MIT"
+  })} />
+</head>
+<body>
+  <header>
+    <div class="brand">Jev<strong>Hub</strong></div>
+    <h1>Discover the Jev ecosystem</h1>
+    <p class="sub">A curated edit of {projects.length}+ System-1 / TypeSafe Jev agent projects — from GitHub, Hacker News and YC discussions.</p>
+    <nav id="filters">
+      <button class="on" data-cat="all">All</button>
+      {cats.map(c => <button data-cat={c}>{c}</button>)}
+    </nav>
+  </header>
+  <main><div id="grid">
+    {projects.map(p => (
+      <a class="card" data-cat={p.category} href={`/projects/${p.slug}/`}>
+        <div class="row">
+          <div class="ava" data-letter={p.name[0].toUpperCase()}>{p.name[0].toUpperCase()}</div>
+          <h3>{p.name}</h3>
+        </div>
+        <p class="tag">{(p.tagline || "—").slice(0, 120)}</p>
+        <div class="meta">
+          <span class="stars">⭐ {p.stars}</span>
+          <span>{p.category}</span>
+          <span>{p.added}</span>
+          {p.verified && <span class="ok">✓</span>}
+        </div>
+      </a>
+    ))}
+  </div></main>
+  <footer>
+    <a href="/submit/">Submit</a> · <a href="/llms.txt">llms.txt</a> · data: <a href="https://github.com/logicrw/awesome-jev-projects">awesome-jev-projects</a>
+  </footer>
+  <script>
+    const btns = document.querySelectorAll("#filters button");
+    btns.forEach(b => (b.onclick = () => {
+      btns.forEach(x => x.classList.remove("on")); b.classList.add("on");
+      const cat = b.dataset.cat;
+      document.querySelectorAll(".card").forEach(c =>
+        (c.style.display = cat === "all" || c.dataset.cat === cat ? "" : "none"));
+    }));
+  </script>
+</body>
+</html>
