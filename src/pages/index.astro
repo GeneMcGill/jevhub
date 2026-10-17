@@ -1,61 +1,53 @@
 ---
-import "../styles.css";
+import Base from "../layouts/Base.astro";
 const projects = (await import("../data/projects.json")).default;
-const cats = [...new Set(projects.map(p => p.category))].sort();
+const CATS = ["All", "AI", "Developer tools", "Design", "Motion", "Productivity", "Consumer", "Hardware", "Other"];
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Browse the Jev ecosystem — curated System-1 agent projects | JevHub</title>
-  <meta name="description" content="A curated directory of the TypeSafe Jev (System-1) agent ecosystem: 864+ projects sourced from GitHub, HN and YC. Filter by category, spot fast risers." />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org", "@type": "Dataset",
-    "name": "JevHub catalog",
-    "description": `Curated catalog of ${projects.length} System-1 / TypeSafe Jev agent projects`,
-    "license": "https://opensource.org/licenses/MIT"
-  })} />
-</head>
-<body>
-  <header>
-    <div class="brand">Jev<strong>Hub</strong></div>
-    <h1>Discover the Jev ecosystem</h1>
-    <p class="sub">A curated edit of {projects.length}+ System-1 / TypeSafe Jev agent projects — from GitHub, Hacker News and YC discussions.</p>
-    <nav id="filters">
-      <button class="on" data-cat="all">All</button>
-      {cats.map(c => <button data-cat={c}>{c}</button>)}
-    </nav>
-  </header>
-  <main><div id="grid">
-    {projects.map(p => (
-      <a class="card" data-cat={p.category} href={`/projects/${p.slug}/`}>
-        <div class="row">
-          <div class="ava" data-letter={p.name[0].toUpperCase()}>{p.name[0].toUpperCase()}</div>
-          <h3>{p.name}</h3>
+<Base>
+  <section class="hero">
+    <h1>Discover project launches from the Jev ecosystem</h1>
+    <p class="sub">A curated edit of product launches, demos, and walkthroughs from System-1 / TypeSafe Jev projects introducing new work to the world.</p>
+  </section>
+  <section class="chips" id="chips">
+    {CATS.map((c, i) => <button class={i === 0 ? "on" : ""} data-cat={c}>{c}</button>)}
+  </section>
+  <div class="count" id="count">{projects.length} videos</div>
+  <div id="grid">
+    {projects.map((p, i) => (
+      <a class="card" data-cat={p.ws_cat} href={`/videos/${p.slug}/`}>
+        <div class="poster" data-hue={i % 4}>
+          <span>{p.name[0].toUpperCase()}</span>
+          {p.views ? <span class="views">{p.views}</span> : null}
+          {p.dur && <span class="dur">{p.dur}</span>}
         </div>
-        <p class="tag">{(p.tagline || "—").slice(0, 120)}</p>
-        <div class="meta">
-          <span class="stars">⭐ {p.stars}</span>
-          <span>{p.category}</span>
-          <span>{p.added}</span>
-          {p.verified && <span class="ok">✓</span>}
+        <div class="body">
+          <div class="handle">@{p.github.split("github.com/")[1]}</div>
+          <h3>{p.name}</h3>
+          <div class="row2">
+            <span>{(p.name.split(/[-\s]/)[0] || "Jev")}</span>
+            <span>·</span><span>{p.ws_cat}</span>
+            <span>·</span><span>{p.added}</span>
+          </div>
         </div>
       </a>
     ))}
-  </div></main>
-  <footer>
-    <a href="/submit/">Submit</a> · <a href="/llms.txt">llms.txt</a> · data: <a href="https://github.com/logicrw/awesome-jev-projects">awesome-jev-projects</a>
-  </footer>
+  </div>
   <script>
-    const btns = document.querySelectorAll("#filters button");
+    const btns = document.querySelectorAll("#chips button");
+    const count = document.getElementById("count");
+    function apply(cat) {
+      let n = 0;
+      document.querySelectorAll(".card").forEach(c => {
+        const show = cat === "All" || c.dataset.cat === cat;
+        c.style.display = show ? "" : "none";
+        if (show) n++;
+      });
+      if (count) count.textContent = n + " videos";
+    }
     btns.forEach(b => (b.onclick = () => {
-      btns.forEach(x => x.classList.remove("on")); b.classList.add("on");
-      const cat = b.dataset.cat;
-      document.querySelectorAll(".card").forEach(c =>
-        (c.style.display = cat === "all" || c.dataset.cat === cat ? "" : "none"));
+      btns.forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      apply(b.dataset.cat);
     }));
   </script>
-</body>
-</html>
+</Base>

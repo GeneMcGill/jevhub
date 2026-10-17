@@ -1,0 +1,51 @@
+---
+import "../styles.css";
+const { title = "JevHub — Discover project launches from the Jev ecosystem", desc = "A curated edit of product launches, demos and walkthroughs from the TypeSafe Jev (System-1) agent ecosystem, sourced from GitHub, X and YC." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={desc} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">JevHub</a>
+    <div class="navlinks">
+      <a href="/">Discover</a>
+      <a href="/tools/">Tools</a>
+      <a href="/studios/">Studios</a>
+      <a href="/about/">About</a>
+    </div>
+    <button class="kbtn" id="kbtn">⌘K</button>
+    <a class="submit" href="/submit/">Submit</a>
+  </nav>
+  <slot />
+  <footer>
+    <div class="flinks">
+      <a href="/">JevHub</a><a href="/about/">About</a>
+      <span>·</span>
+      <a href="https://logicrw.github.io/awesome-jev-projects/">awesome-jev-projects</a>
+      <span>·</span>
+      <a href="/llms.txt">llms.txt</a>
+      <span>·</span>
+      <a href="/developers/">Developers</a>
+      <span>·</span>
+      <a href="/tools/">Tools</a>
+      <span>·</span>
+      <a href="/studios/">Studios</a>
+      <span>·</span>
+      <a href="/submit/">Submit ↗</a>
+    </div>
+    <p class="copy">© 2026 JevHub · Ask about JevHub on</p>
+  </footer>
+  <script>
+    document.getElementById("kbtn")?.addEventListener("click", () => {
+      const q = prompt("Search projects…");
+      if (q) location.href = "/?q=" + encodeURIComponent(q);
+    });
+  </script>
+</body>
+</html>

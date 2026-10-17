@@ -1,0 +1,27 @@
+---
+export async function getStaticPaths() {
+  const projects = (await import("../../data/projects.json")).default;
+  return projects.map(p => ({ params: { slug: p.slug }, props: { p } }));
+}
+import Base from "../../layouts/Base.astro";
+const { p } = Astro.props;
+const handle = p.github.split("github.com/")[1];
+---
+<Base title={p.name + " — JevHub"} desc={p.tagline || p.name}>
+  <section class="detail">
+    <a class="back" href="/">← Back to Discover</a>
+    <div class="poster hero-vid"><span style="font-size:120px">{p.name[0].toUpperCase()}</span></div>
+    <h1>{p.name}</h1>
+    <div class="meta">
+      <span>{(p.name.split(/[-\s]/)[0] || "Jev")}</span>
+      <span>·</span><span>{p.ws_cat}</span>
+      <span>·</span><span>{p.added}</span>
+    </div>
+    <p class="desc">{p.tagline || "This project is catalogued from the awesome-jev-projects radar. Its source links, SQL and documentation are attached below."}</p>
+    <div class="sources">
+      <a href={p.github}>GitHub ↗</a>
+      <a href={"https://news.ycombinator.com/item?id=" + p.slug}>HN discussion</a>
+      <a href="https://github.com/logicrw/awesome-jev-projects">Review basis: awesome-jev-projects</a>
+    </div>
+  </section>
+</Base>
