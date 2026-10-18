@@ -11,14 +11,12 @@ const CATS = ["All", "AI", "Developer tools", "Design", "Motion", "Productivity"
   <section class="chips" id="chips">
     {CATS.map((c, i) => <button class={i === 0 ? "on" : ""} data-cat={c}>{c}</button>)}
   </section>
-  <div class="count" id="count">{projects.length} videos</div>
+  <div class="count" id="count">{projects.length} videos · sourced from GitHub / HN / YC · <a href="https://github.com/GeneMcGill/jevhub" style="color:var(--acc)">⭐ Star on GitHub</a></div>
   <div id="grid">
     {projects.map((p, i) => (
       <a class="card" data-cat={p.ws_cat} href={`/videos/${p.slug}/`}>
         <div class="poster" data-hue={i % 4}>
           <span>{p.name[0].toUpperCase()}</span>
-          {p.views ? <span class="views">{p.views}</span> : null}
-          {p.dur && <span class="dur">{p.dur}</span>}
         </div>
         <div class="body">
           <div class="handle">@{p.github.split("github.com/")[1]}</div>

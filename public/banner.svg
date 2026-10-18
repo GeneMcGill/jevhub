@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="220" viewBox="0 0 1100 220">
+  <rect width="1100" height="220" rx="18" fill="#0c0e0c"/>
+  <circle cx="930" cy="40" r="140" fill="#d7fa91" opacity="0.08"/>
+  <circle cx="220" cy="200" r="110" fill="#7ee787" opacity="0.06"/>
+  <text x="60" y="95" font-family="ui-monospace,Menlo,monospace" font-size="20" fill="#9aa69a">DISCOVER</text>
+  <text x="60" y="150" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="42" font-weight="800" fill="#e8ece8">the Jev ecosystem</text>
+  <text x="60" y="185" font-family="ui-monospace,Menlo,monospace" font-size="18" fill="#d7fa91">864+ System-1 projects · GitHub / HN / YC</text>
+</svg>
