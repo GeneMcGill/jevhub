@@ -1,3 +1,9 @@
-dist/
-node_modules/.cache
+# dependencies
+node_modules/
 
+# build output (root-level only — astro static build)
+/dist/
+
+# system
+.DS_Store
+*.log
