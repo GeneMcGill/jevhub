@@ -1,5 +1,7 @@
 # JevHub
 
+**🌐 [English](README.md)**
+
 > Jev / System-1 agent 生态的策展式发布视频目录。
 
 <a href="https://github.com/Guislabert/jevhub">
@@ -8,8 +10,6 @@
     <img alt="JevHub" src="assets/hero-light.svg" width="820">
   </picture>
 </a>
-
-**🌐 [English](README.md)**
 
 <div align="center">
 
