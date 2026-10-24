@@ -15,8 +15,6 @@
 [![版本](https://img.shields.io/badge/版本-0.1.0-4285F4.svg)][vlg]
 [![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
 
-`#astro5` `#静态站` `#jelv` `#whatships-复刻` `#llms.txt` `#零后端`
-
 </div>
 
 <h1 align="center">JevHub</h1>
