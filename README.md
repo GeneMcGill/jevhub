@@ -11,15 +11,11 @@
 [![License](https://img.shields.io/badge/License-MIT-d97706?style=flat-square)](LICENSE)
 [![Built with Astro](https://img.shields.io/badge/Built%20with-Astro%205-8b5cf6?style=flat-square)](https://astro.build)
 
-[English](#what-is-this) · [简体中文简介](#简介中文)
+[English](#what-is-this) · [简体中文](README.zh-CN.md)
 
 </div>
 
 ---
-
-## 简介（中文）
-
-JevHub 是 Jev 生态（System-1 agent）的策展目录：**864+ 个项目 · 17 个分类 · 每日更新**。形态上对标 whatships.com 的发布页目录：首页分类芯片筛选 + 卡片网格 + 每个项目独立详情页。数据全部来自零付费官方渠道（GitHub REST API、HN Algolia、awesome-jev-projects），每日采集后静态构建、部署到 GitHub Pages，整站无需后端。
 
 ## What is this?
 
