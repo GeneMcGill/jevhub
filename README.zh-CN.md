@@ -7,6 +7,18 @@
   </picture>
 </a>
 
+</div>
+
+<h1 align="center">JevHub</h1>
+
+<div align="center">
+
+> **Jev / System-1 agent 生态**的策展式发布视频目录 —— 发现项目发布、演示与走查，由免费、官方、合规渠道每日刷新。
+
+</div>
+
+<div align="center">
+
 [![CI](https://img.shields.io/badge/CI-passing-34A853.svg)][ci]
 [![版本](https://img.shields.io/badge/版本-0.1.0-4285F4.svg)][vlg]
 [![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
@@ -15,14 +27,10 @@
 
 </div>
 
-# JevHub
-
-<div align="center">
-
-> **Jev / System-1 agent 生态**的策展式发布视频目录 —— 发现项目发布、演示与走查，由免费、官方、合规渠道每日刷新。
-
 > [!NOTE]
 > 已上线： [jevhub.example.org](https://jevhub.example.org/) —— 基于 GitHub Pages 的静态目录。如果它对你有帮助，请点亮 star，帮助更多人发现 Jev 生态。
+
+<div align="center">
 
 [English](README.md) | 简体中文
 

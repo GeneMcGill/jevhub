@@ -7,6 +7,18 @@
   </picture>
 </a>
 
+</div>
+
+<h1 align="center">JevHub</h1>
+
+<div align="center">
+
+> A curated launch-video directory of the **Jev / System-1 agent ecosystem** — discover project launches, demos and walkthroughs, refreshed daily from free, official, compliant sources.
+
+</div>
+
+<div align="center">
+
 [![CI](https://img.shields.io/badge/CI-passing-34A853.svg)][ci]
 [![Version](https://img.shields.io/badge/Version-0.1.0-4285F4.svg)][vlg]
 [![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
@@ -15,14 +27,10 @@
 
 </div>
 
-# JevHub
-
-<div align="center">
-
-> A curated launch-video directory of the **Jev / System-1 agent ecosystem** — discover project launches, demos and walkthroughs, refreshed daily from free, official, compliant sources.
-
 > [!NOTE]
 > Deployed site: [jevhub.example.org](https://jevhub.example.org/) — a statically built GitHub Pages catalog. Star it if it helps [others find the Jev ecosystem](https://github.com/Guislabert/jevhub).
+
+<div align="center">
 
 English | [简体中文](README.zh-CN.md)
 
