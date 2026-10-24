@@ -9,14 +9,6 @@
 
 </div>
 
-<h1 align="center">JevHub</h1>
-
-<div align="center">
-
-> A curated launch-video directory of the **Jev / System-1 agent ecosystem** — discover project launches, demos and walkthroughs, refreshed daily from free, official, compliant sources.
-
-</div>
-
 <div align="center">
 
 [![CI](https://img.shields.io/badge/CI-passing-34A853.svg)][ci]
@@ -24,6 +16,14 @@
 [![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
 
 `#astro5` `#static` `#jelv` `#whatships-replica` `#llms.txt` `#zero-backend`
+
+</div>
+
+<h1 align="center">JevHub</h1>
+
+<div align="center">
+
+> A curated launch-video directory of the **Jev / System-1 agent ecosystem** — discover project launches, demos and walkthroughs, refreshed daily from free, official, compliant sources.
 
 </div>
 

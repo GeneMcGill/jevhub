@@ -9,14 +9,6 @@
 
 </div>
 
-<h1 align="center">JevHub</h1>
-
-<div align="center">
-
-> **Jev / System-1 agent 生态**的策展式发布视频目录 —— 发现项目发布、演示与走查，由免费、官方、合规渠道每日刷新。
-
-</div>
-
 <div align="center">
 
 [![CI](https://img.shields.io/badge/CI-passing-34A853.svg)][ci]
@@ -24,6 +16,14 @@
 [![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
 
 `#astro5` `#静态站` `#jelv` `#whatships-复刻` `#llms.txt` `#零后端`
+
+</div>
+
+<h1 align="center">JevHub</h1>
+
+<div align="center">
+
+> **Jev / System-1 agent 生态**的策展式发布视频目录 —— 发现项目发布、演示与走查，由免费、官方、合规渠道每日刷新。
 
 </div>
 
