@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 440" preserveAspectRatio="xMidYMid meet" role="img" aria-label="JevHub — Discover project launches from the Jev ecosystem">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="0.5" stop-color="#faf5ff"/>
+      <stop offset="1" stop-color="#fdf6ec"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="0.15" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="0.95" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#6366F1" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="0.5" stop-color="#EB5E28"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#21bca8"/>
+      <stop offset="0.33" stop-color="#2563eb"/>
+      <stop offset="0.66" stop-color="#EB5E28"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0 L0 0 0 44" fill="none" stroke="#0f172a" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1640" height="440" fill="url(#bg)"/>
+  <rect width="1640" height="440" fill="url(#warm)"/>
+  <rect width="1640" height="440" fill="url(#cool)"/>
+  <rect width="1640" height="440" fill="url(#grid)"/>
+
+  <rect x="100" y="118" width="180" height="3" rx="1.5" fill="url(#accent)" opacity="0.95"/>
+
+  <text x="100" y="102" font-family="'Inter','SF Pro Text','Avenir Next',-apple-system,Segoe UI,sans-serif" font-size="18" font-weight="600" letter-spacing="2.8" fill="#475569">CURATED&#160;DIRECTORY&#160;OF&#160;THE&#160;JEV&#160;ECOSYSTEM&#160;&#8226;&#160;DISCOVER&#160;LAUNCHES&#160;&#8226;&#160;DAILY&#160;REFRESH</text>
+
+  <text x="100" y="232" font-family="'Iowan Old Style',Palatino,Georgia,'Times New Roman',serif" font-size="128" font-weight="700" fill="#0f172a" letter-spacing="-2">Jev<tspan fill="url(#violet)">Hub</tspan></text>
+
+  <text x="100" y="300" font-family="'Iowan Old Style',Palatino,Georgia,'Times New Roman',serif" font-size="30" font-style="italic" fill="#475569">Discover project launches from the Jev ecosystem.</text>
+  <text x="100" y="338" font-family="'Iowan Old Style',Palatino,Georgia,'Times New Roman',serif" font-size="30" font-style="italic" fill="#475569">864+ projects &#183; category-chipped &#183; zero-paid-API data.</text>
+
+  <g transform="translate(1160 80)" font-family="'Inter','SF Pro Text','Avenir Next',sans-serif" font-size="16" font-weight="600">
+    <path d="M90 48 Q 180 28, 270 48" fill="none" stroke="#475569" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <path d="M90 128 Q 180 148, 270 128" fill="none" stroke="#475569" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <path d="M90 208 Q 180 188, 270 208" fill="none" stroke="#475569" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+    <g>
+      <rect x="0" y="26" width="180" height="44" rx="22" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+      <circle cx="22" cy="48" r="5" fill="#2563eb"/>
+      <text x="40" y="54" fill="#0f172a">launch cards</text>
+    </g>
+    <g>
+      <rect x="200" y="26" width="180" height="44" rx="22" fill="#ffffff" stroke="#EB5E28" stroke-width="1.5"/>
+      <circle cx="222" cy="48" r="5" fill="#EB5E28"/>
+      <text x="240" y="54" fill="#0f172a">category chips</text>
+    </g>
+    <g>
+      <rect x="0" y="106" width="180" height="44" rx="22" fill="#ffffff" stroke="#21bca8" stroke-width="1.5"/>
+      <circle cx="22" cy="128" r="5" fill="#21bca8"/>
+      <text x="40" y="134" fill="#0f172a">/videos/ detail</text>
+    </g>
+    <g>
+      <rect x="200" y="106" width="180" height="44" rx="22" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+      <circle cx="222" cy="128" r="5" fill="#0284c7"/>
+      <text x="240" y="134" fill="#0f172a">tools index</text>
+    </g>
+    <g>
+      <rect x="0" y="186" width="180" height="44" rx="22" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+      <circle cx="22" cy="208" r="5" fill="#2563eb"/>
+      <text x="40" y="214" fill="#0f172a">studios ranked</text>
+    </g>
+    <g>
+      <rect x="200" y="186" width="180" height="44" rx="22" fill="#ffffff" stroke="#EB5E28" stroke-width="1.5"/>
+      <circle cx="222" cy="208" r="5" fill="#EB5E28"/>
+      <text x="240" y="214" fill="#0f172a">submit issue</text>
+    </g>
+  </g>
+
+  <rect x="100" y="390" width="1440" height="1" fill="#0f172a" fill-opacity="0.1"/>
+  <text x="100" y="415" font-family="'Inter','SF Pro Text',sans-serif" font-size="14" fill="#475569">Astro 5 &#160;&#8226;&#160; GitHub Pages &#160;&#8226;&#160; zero-backend &#160;&#8226;&#160; llms.txt + JSON-LD &#160;&#8226;&#160; daily collectors</text>
+</svg>

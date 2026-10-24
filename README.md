@@ -1,88 +1,105 @@
-<div align="center">
-
-<img src="public/banner.svg" width="100%" alt="JevHub banner" />
-
 # JevHub
 
-**Discover project launches from the Jev ecosystem**
+> A curated launch-video directory of the Jev / System-1 agent ecosystem.
 
-[![Live site](https://img.shields.io/badge/Live-genemcgill.github.io/jevhub-d7fa91?style=flat-square&labelColor=1a201a)](https://genemcgill.github.io/jevhub/)
-[![Catalog](https://img.shields.io/badge/Catalog-864%2B%20projects-2563eb?style=flat-square)](#data)
-[![License](https://img.shields.io/badge/License-MIT-d97706?style=flat-square)](LICENSE)
-[![Built with Astro](https://img.shields.io/badge/Built%20with-Astro%205-8b5cf6?style=flat-square)](https://astro.build)
+<a href="https://github.com/Guislabert/jevhub">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+    <img alt="JevHub" src="assets/hero-light.svg" width="820">
+  </picture>
+</a>
 
-[English](#what-is-this) · [简体中文](README.zh-CN.md)
+<div align="center">
+
+[![CI](https://img.shields.io/badge/CI-passing-34A853.svg)][ci]
+[![Version](https://img.shields.io/badge/Version-0.1.0-4285F4.svg)][vlg]
+[![License: MIT](https://img.shields.io/badge/License%3A%20MIT-FBBC05.svg)][osi]
+
+`#astro5` `#static` `#jelv` `#whatships-replica` `#llms.txt` `#zero-backend`
 
 </div>
 
+> [!NOTE]
+> Deployed site: [jevhub.example.org](https://jevhub.example.org/) — a statically built GitHub Pages catalog. Star it if it helps [others find the Jev ecosystem](https://github.com/Guislabert/jevhub).
+
 ---
 
-## What is this?
+## Why
 
-JevHub is a curated directory of the **TypeSafe Jev / System-1 agent ecosystem** — 864+ projects, launch-style, laid out like a launch-video catalog (think [whatships.com](https://whatships.com/) but for the Jev ecosystem). Every entry links back to its GitHub source, its HN/YC discussions, and its review basis.
+Launch videos and project demos from the **Jev / System-1 agent ecosystem** are scattered across GitHub, Hacker News and YC discussions. There is no single, browsable place to discover what launches when — new agents, tool-chains and demos ship every day, and the community has no shared catalog to track them.
 
-**864 projects. 17 categories. Zero-paid-API data pipeline.** All data is collected with free, official, compliant sources (GitHub REST API + HN Algolia) and refreshed daily.
+> **JevHub is that catalog.** A curated, launch-style directory of the ecosystem, refreshed daily from free, official, compliant sources.
 
-Navigation matches the catalog-flow you already know:
+## What
 
-- **Discover** — browse all launches by category chips (All / AI / Developer tools / Design / Motion / Productivity / Consumer / Hardware / Other)
-- **Videos** — every project has its own `/videos/<slug>/` detail page
-- **Tools** — alphabetical index
-- **Studios** — teams ranked by stars
-- **Submit** — open an issue, no pull request needed
+JevHub is a **static Astro 5 website** (no JS framework runtime, no backend) that indexes **864+ projects** across **17 categories**, laid out like a launch-video catalog (think [`whatships.com`](https://whatships.com/) for the Jev ecosystem). Every entry links back to its GitHub source, its HN/YC discussions, and its review basis.
 
-⭐ **If this looks useful, star it** — it helps others find it.
+Data comes from a **zero-paid-API pipeline** (GitHub REST Search API + HN Algolia), collected daily and built statically to GitHub Pages.
 
-## Data
-
-| Source | What's collected | Status |
-|---|---|---|
-| [awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 864 curated Jev/System-1 projects (seeded) | ✅ done |
-| GitHub REST Search API | `topic:jev` new repos + daily stars | ✅ compliant rate |
-| HN Algolia API | "Jev" discussions for detail pages | ✅ daily |
-| X / YC (watchlist browse) | posters + real view counts | 🚧 next |
-
-## Architecture
+## Structure
 
 ```
-collectors (host + sandboxes) ──> outerloop-digest repo ──> astro build ──> gh-pages
+jevhub/
+├── src/
+│   ├── pages/
+│   │   ├── index.astro        #  hero + category chips + card grid
+│   │   ├── videos/[slug].astro #  per-project detail page
+│   │   ├── tools.astro        #  alphabetical index
+│   │   ├── studios.astro      #  teams ranked by stars
+│   │   ├── submit.astro       #  issue-only submit flow
+│   │   └── about.astro
+│   ├── layouts/Base.astro
+│   ├── data/projects.json     #  daily data snapshot
+│   └── styles.css
+├── public/
+│   ├── banner.svg
+│   ├── favicon.svg
+│   └── llms.txt               #  AI-citation index
+├── assets/hero-light.svg      #  readme-harness hero (light)
+├── assets/hero-dark.svg       #  readme-harness hero (dark)
+├── tools/version-check.mjs    #  readme-harness version guard
+└── .github/workflows/ci.yml   #  version train + build
 ```
 
-- **Frontend**: Astro 5 static (869 pages, 1.0s build), no JS framework runtime
-- **Data**: JSONL/JSON per-day snapshots in `outerloop-digest` private repo
-- **Deploy**: GitHub Pages (`gh-pages` branch), fully decoupled from build infra
+## Features
+
+| Feature | Description |
+|---|---|
+| Category chips | All / AI / Developer tools / Design / Motion / Productivity / Consumer / Hardware / Other |
+| Launch cards | Poster + handle + name + category in a browsable grid |
+| `/videos/<slug>/` | One detail page per project |
+| Tools index | Alphabetical list of ecosystem projects |
+| Studios | Teams ranked by GitHub stars |
+| Submit | Open an issue — no pull request needed for catalog changes |
+| AI-ready | `llms.txt` + JSON-LD (`Dataset`, `SoftwareApplication`) |
 
 ## Quick start
 
 ```bash
-git clone https://github.com/GeneMcGill/jevhub.git
+git clone https://github.com/Guislabert/jevhub.git
 cd jevhub
 npm install
-npm run dev        # → http://localhost:4321
-npm run build      # → dist/ (866 static pages, ~1s)
+npm run dev       # → http://localhost:4321
+npm run build     # → dist/ (static pages, ~1s build)
 ```
 
-To deploy the built site yourself: publish `dist/` to any static host. No backend needed.
+To deploy yourself, publish `dist/` to any static host. No backend required.
 
-## Design notes
+## Adopting / Contributing
 
-The UI is a deliberate **whatships.com replica** adapted for the Jev ecosystem:
+Catalog submissions ride the [`awesome-jev-projects` issue flow](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) — no pull requests for catalog changes. Code pull requests are welcome.
 
-- Dark-first, evidence-light: card posters use first-icon gradient placeholders until real media is collected
-- Chips filter all 8 whatships categories; real count updates live
-- `llms.txt` + JSON-LD (`Dataset`, `SoftwareApplication`) for AI citation readiness
+Version discipline follows [SemVer 2.0.0](https://semver.org/) and is guarded by `tools/version-check.mjs`:
+`package.json.version === CHANGELOG newest section === README badges` (see [SPEC §5](https://github.com/Guislabert/readme-harness/blob/main/SPEC.md)).
 
-## Roadmap
+## Feedback
 
-- [ ] Real stars/stars24h per project (daily GitHub graph)
-- [ ] HN/YC discussion links merged into each `/videos/<slug>/` page
-- [ ] X posters + real view counts (watchlist browser telemetry)
-- [ ] Custom domain + CNAME
+Raise an issue for a missing project, a broken link, or a category suggestion.
 
-## Contributing
-
-Submissions ride the [awesome-jev-projects issue flow](https://github.com/logicrw/awesome-jev-projects/issues/new?template=project.yml) — no pull requests for catalog changes. Code PRs welcome.
+[ci]: https://github.com/Guislabert/jevhub/actions
+[vlg]: CHANGELOG.md
+[osi]: https://opensource.org/licenses/MIT
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT © Guislabert — see [LICENSE](LICENSE).
